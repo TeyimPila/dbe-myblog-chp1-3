@@ -84,9 +84,9 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': DATABASE_NAME,
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
+        'NAME': 'dbe_blog',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '',
         'PORT': '',
     }
@@ -110,3 +110,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# thise are the email configurations for a local SMTP server. the configuation has default values
+#
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'teyim.pila@aun.edu.ng'
+EMAIL_HOST_PASSWORD = '30091993TmP'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
