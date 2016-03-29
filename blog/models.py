@@ -24,8 +24,8 @@ class Post(models.Model):
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
 
-    objects = models.Manager() # The default manager.
-    published = PublishedManager() # The Dahl-specific manager.
+    objects = models.Manager()  # The default manager.
+    published = PublishedManager()  # The Dahl-specific manager.
 
     # from the tagit thirdparty library
     tags = TaggableManager()
@@ -38,6 +38,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('blog:post_detail', args=[self.pk])
+
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments')
@@ -53,4 +54,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment by {} on {}'.format(self.name, self.post)
-
